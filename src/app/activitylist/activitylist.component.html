@@ -1,0 +1,136 @@
+
+
+  <!-- <button type="button" class="btn btn-primary"  (click)="addactivityhistory('myModal')" >Add</button> -->
+                  
+
+   <!-- <div class="modal" id="addactivityhistory" tabindex="1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center" id="BiggerModalNonREF">
+            <div class="modal-content" style="padding: 20px;">
+                    <div>
+                        <span>Upload Document</span>                        
+                    </div>
+                <div class="modal-footer bindquote-footer">
+                    <a  class="btn-modal-yes  HideAfterOneClick"  data-dismiss="modal">Generate Report</a>
+                 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>   -->
+
+<!-- <modal myModal>
+    <modal-header>
+        <h1>Modal header</h1>
+    </modal-header>
+    <modal-content>
+        Hello Modal!
+    </modal-content>
+    <modal-footer>
+        <button class="btn btn-primary" (click)="closeModal('myModal')">close</button>
+    </modal-footer>
+</modal> -->
+  
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Upload Document</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <form [formGroup]="addForm" >
+    <div class="modal-body">
+        <div class="row">
+            <div class="col">
+                    <div class="form-group">
+            
+                    <label for="Company"  style="top: -10px;">Company   </label>
+              
+                <select formControlName="company"
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.Company }" >
+                <option value="" >Select</option>
+                        <option  >Volvo</option>
+                        <option >Saab</option>
+                        <option >Mercedes</option>
+                        <option >Audi</option>
+                      </select>
+            
+                    </div>
+            </div>
+            </div>
+            <div class="form-group">
+   
+            <label for="Company"  style="top: -10px;">Previous File : </label>&nbsp;
+            <input type='file' (change)="onSelectFile($event)" formControlName="previousfile">
+    </div>
+    <div class="form-group">
+
+    <label for="Company"  style="top: -10px;">Recent File : </label>&nbsp;&nbsp;&nbsp;
+    <input type='file' (change)="onSelectchange($event)" formControlName="recentfile">
+</div>
+    </div>
+
+
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-outline-dark" (click)="onSubmit()"  *ngIf="isSave">Generate Report</button>
+    </div>
+    </form>
+   </ng-template>
+  
+  <button class="btn btn-lg btn-outline-dark" (click)="open(content)">Add</button>
+
+
+
+
+<div class=" col-md-11 col-ms-12">
+    <div class="main-frame-container" style="padding: 0px 5px; margin-top: 0px;">
+        <h2 style="margin-top: 0px; margin-bottom: 0px;">Activity History</h2>
+        <section  class="wizard-section">
+            <div class="gen-info">
+                <div class="gi-lower">
+                        <h4 style="margin-bottom: 0px;"></h4>
+                    <table class="table table-condensed zero_border" style="border-collapse:collapse; border:none; box-shadow:10px; margin-bottom: 10px;">
+                            <thead >
+                                    <tr>
+                                           
+                                        <tr >
+                                          
+                                           
+                                            <th style="width: 10%">Date</th>
+                                            <th style="width: 10%">Company</th>
+                                            <th style="width: 30%">Previous File</th>
+                                            <th style="width: 30%">Recent File</th>
+                                            
+                                            <th style="width: 20%">Status</th>
+                                          
+                                            </tr>
+                                                                                       
+                            </thead>  
+                        
+                            
+                            <tbody>
+                                    <tr *ngFor="let employee of Employees;   trackBy: trackByFn;  let i=index;">
+                                   
+                                        <td style="width: 10%">{{employee.date | date:"MM/dd/yyyy"}}</td>
+                                        <td style="width: 10%">{{employee.company}}</td>
+                                        <td style="width: 30%">{{employee.previousfile}}</td>
+                                        <td style="width: 30%">{{employee.recentfile}}</td>
+                                        <td style="width: 20%">{{employee.status}}</td> 
+                                        
+                                    </tr>
+                        
+                                </tbody>
+                    </table>
+               
+                    </div>
+                    </div>
+                    </section>
+                    </div>
+                    <p><a  class="btn btn-lg btn-outline-dark" (click)="logout()" >Logout</a></p>
+                    </div>
+                   
+
+
+                  
+            

@@ -1,0 +1,18 @@
+
+table, th , td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+ 
+}
+
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+.col-md-11 {
+    flex: 0 0 91.666667%;
+    max-width: 103.666667%;
+}

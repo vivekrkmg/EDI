@@ -1,0 +1,17 @@
+<?xml version="1.0"?>  
+<Users>  
+    <login>  
+        <id>1</id>  
+        <email>Vivek.Bhardwaj@kmgin.com</email>  
+        <password>123456</password>  
+       
+    </login>  
+       <login>  
+        <id>2</id>  
+        <email>gaurav.bhalla@kmgus.com</email>  
+        <password>654321</password>  
+       
+    </login> 
+   
+    
+</Users>

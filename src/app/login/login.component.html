@@ -1,0 +1,103 @@
+
+
+
+<div class="EDI">
+    <main class="EDI-main">
+        <div class="main-centered-division">
+            <div class="main-header text-center">
+                 <p>
+                    <img src="assets/images/logo.png">
+                </p> 
+            </div>
+            <div class="main-content">
+
+
+
+
+                <div class="main-outer">
+                    <div class="main-inner">
+                        <div class="col-md-6 con-login-left col-sm-6 hidden-xs">
+                            <div class="inner-left">
+
+                                    <h4 class="il-icon"></h4>
+                                                                 
+                                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                       
+                                        <!-- Wrapper for slides -->
+                                        <div class="carousel-inner">
+                                            <div class="item active">
+    
+                                                <!-- <img src="assets/images/cl.png" alt="EDI"> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                <!-- <img src="images/big-slider.png" class="img-responsive inner-left-img"> -->
+                            </div>
+                        </div>
+                        <form [formGroup]="LoginForm" (ngSubmit)="onSubmit()">
+                            <div class="col-md-6 col-sm-6 con-login-right body-center">
+                                <div class="inner-right">
+
+                                    <h2>LOGIN</h2>
+
+                                    <div class="login-container">
+                                        <div class="form-group">
+
+                                            <input type="text" placeholder="username" formControlName="email"
+                                                class="form-control"
+                                                [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                                            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                                <div *ngIf="f.email.errors.required">Email is required</div>
+                                                <div *ngIf="f.email.errors.email">Email must be a valid email address
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+
+                                            <input type="password" placeholder="password" formControlName="password"
+                                                class="form-control"
+                                                [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                                            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                                <div *ngIf="f.password.errors.required">Password is required</div>
+                                                <div *ngIf="f.password.errors.minlength">Password must be at least 6
+                                                    characters</div>
+                                            </div>
+                                        </div>
+                                        <span class="FormGroup" style="padding-top: 5px;">
+                                            <a id="forgot" (click)='ForgotPassword(LoginForm.value)'>Forgot?</a>
+                                        </span>
+                                        <div class="FormGroup">
+                                            <button type="submit" (click)="onSubmit()"
+                                                class="btn btn-default">LOGIN</button>
+
+                                        </div>
+                                        <div class="FormGroup">
+                                            <button class="btn btn-default"><a [routerLink]="['/signup']">
+
+                                                    signup</a></button>
+
+                                        </div>
+                                        <!-- <p class="para">"Leveraging strength and expertise to deliver consistent quality"</p>      -->
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- <script type="text/javascript">
+                    $(document).keyup(function (event) {
+                        if (event.keyCode === 13) {
+                            $(".user-action").click();
+                        }
+                    });
+                                    
+                </script> -->
+
+
+            </div>
+        </div>
+    </main>
+
+
+</div>
